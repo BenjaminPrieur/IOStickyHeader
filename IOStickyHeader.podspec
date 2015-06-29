@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "IOStickyHeader"
-  s.version          = "0.1.1"
+  s.version          = "0.1.2"
   s.summary          = "Parallax and Sticky header done right using UICollectionViewLayout"
   s.description      = <<-DESC
                        UICollectionView are flexible and you can use supplementary views to

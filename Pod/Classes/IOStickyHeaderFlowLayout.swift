@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-let IOStickyHeaderParallaxHeader = "IOStickyHeaderParallexHeader"
+public let IOStickyHeaderParallaxHeader = "IOStickyHeaderParallexHeader"
 
 public class IOStickyHeaderFlowLayout: UICollectionViewFlowLayout {
     
