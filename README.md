@@ -1,5 +1,4 @@
-This library is a copy from obj-C code to swift 2.0 from CSStickyHeaderFlowLayout library
-I migrated CSStickyHeaderFlowLayout library (Obj-C) to swift2.0
+I migrated [CSStickyHeaderFlowLayout](https://github.com/jamztang/CSStickyHeaderFlowLayout) library (Obj-C) to swift2.0
 
 # IOStickyHeader
 
