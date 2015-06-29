@@ -12,25 +12,23 @@ Pod::Spec.new do |s|
   s.version          = "0.1.0"
   s.summary          = "A short description of IOStickyHeader."
   s.description      = <<-DESC
-                       An optional longer description of IOStickyHeader
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+                       UICollectionView are flexible and you can use supplementary views to
+                       anything you wanted.
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/IOStickyHeader"
+  s.homepage         = "https://github.com/ibeneb/IOStickyHeader"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
-  s.author           = { "Benjamin Prieur" => "benjamin@smok.io" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/IOStickyHeader.git", :tag => s.version.to_s }
+  s.author           = { "Benjamin Prieur" => "benjamin@prieur.org" }
+  s.source           = { :git => "https://github.com/ibeneb/IOStickyHeader.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'IOStickyHeader' => ['Pod/Assets/*.png']
-  }
+  # s.resource_bundles = {
+  #  'IOStickyHeader' => ['Pod/Assets/*.png']
+  #}
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
