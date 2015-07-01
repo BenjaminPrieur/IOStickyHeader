@@ -24,7 +24,7 @@ pod "IOStickyHeader"
 
 ## Author
 
-Benjamin Prieur, benjamin@smok.io
+Benjamin Prieur
 
 ## License
 
