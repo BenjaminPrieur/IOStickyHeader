@@ -1,5 +1,6 @@
 I migrated [CSStickyHeaderFlowLayout](https://github.com/jamztang/CSStickyHeaderFlowLayout) library (Obj-C) to swift2.0
 
+
 # IOStickyHeader
 
 [![CI Status](http://img.shields.io/travis/Benjamin Prieur/IOStickyHeader.svg?style=flat)](https://travis-ci.org/Benjamin Prieur/IOStickyHeader)
@@ -7,11 +8,19 @@ I migrated [CSStickyHeaderFlowLayout](https://github.com/jamztang/CSStickyHeader
 [![License](https://img.shields.io/cocoapods/l/IOStickyHeader.svg?style=flat)](http://cocoapods.org/pods/IOStickyHeader)
 [![Platform](https://img.shields.io/cocoapods/p/IOStickyHeader.svg?style=flat)](http://cocoapods.org/pods/IOStickyHeader)
 
+Parallax, Sticky Headers, Growing image heading, done right in one UICollectionViewLayout.
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+More details soon
+
 ## Requirements
+
+- Xcode 7
+- Swift 2.0
+- iOS 8 (I haven't really test on iOS 7 but it should work if you're using iOS 7 compatible Storyboard)
 
 ## Installation
 
@@ -19,12 +28,13 @@ IOStickyHeader is available through [CocoaPods](http://cocoapods.org). To instal
 it, simply add the following line to your Podfile:
 
 ```ruby
+use_frameworks!
 pod "IOStickyHeader"
 ```
 
 ## Author
 
-Benjamin Prieur, benjamin@smok.io
+Benjamin Prieur
 
 ## License
 
