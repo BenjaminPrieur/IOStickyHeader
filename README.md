@@ -8,13 +8,44 @@ I migrated [CSStickyHeaderFlowLayout](https://github.com/jamztang/CSStickyHeader
 [![License](https://img.shields.io/cocoapods/l/IOStickyHeader.svg?style=flat)](http://cocoapods.org/pods/IOStickyHeader)
 [![Platform](https://img.shields.io/cocoapods/p/IOStickyHeader.svg?style=flat)](http://cocoapods.org/pods/IOStickyHeader)
 
+<img src="https://github.com/BenjaminPrieur/IOStickyHeader/blob/master/Example/exemple.png" width="320"/>
+
 Parallax, Sticky Headers, Growing image heading, done right in one UICollectionViewLayout.
 
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-More details soon
+Don't forget to set your flow layout with IOStickyHeader in your storyboard
+
+<img src="https://github.com/BenjaminPrieur/IOStickyHeader/blob/master/Example/tuto1.png"/>
+
+Register that nib file to your collection view controller in code:
+
+```Swift
+import IOStickyHeader
+
+  let headerNib = UINib(nibName: "IOGrowHeader", bundle: NSBundle.mainBundle())
+  override func viewDidLoad() {
+      super.viewDidLoad()
+        
+      self.collectionView.registerNib(self.headerNib, forSupplementaryViewOfKind: IOStickyHeaderParallaxHeader, withReuseIdentifier: "header")
+  }
+```
+
+Implement `func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView`
+
+```Swift
+func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+    switch kind {
+    case IOStickyHeaderParallaxHeader:
+        let cell = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "header", forIndexPath: indexPath) as! IOGrowHeader
+        return cell
+    default:
+        assert(false, "Unexpected element kind")
+    }
+}
+```
 
 ## Requirements
 
