@@ -9,17 +9,17 @@
 
 Pod::Spec.new do |s|
   s.name             = "IOStickyHeader"
-  s.version          = "0.1.2"
+  s.version          = "0.2.0"
   s.summary          = "Parallax and Sticky header done right using UICollectionViewLayout"
   s.description      = <<-DESC
                        UICollectionView are flexible and you can use supplementary views to
                        anything you wanted.
                        DESC
-  s.homepage         = "https://github.com/ibeneb/IOStickyHeader"
+  s.homepage         = "https://github.com/BenjaminPrieur/IOStickyHeader.git"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Benjamin Prieur" => "benjamin@prieur.org" }
-  s.source           = { :git => "https://github.com/ibeneb/IOStickyHeader.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/BenjaminPrieur/IOStickyHeader.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '8.0'

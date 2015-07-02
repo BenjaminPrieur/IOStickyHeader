@@ -3,7 +3,8 @@
 //  IOStickyHeader
 //
 //  Created by Benjamin Prieur on 06/29/2015.
-//  Copyright (c) 06/29/2015 Benjamin Prieur. All rights reserved.
+//  For the full copyright and license information, please view the LICENSE
+//  file that was distributed with this source code.
 //
 
 import UIKit

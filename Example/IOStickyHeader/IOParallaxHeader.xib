@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Vau-7a-MjQ" customClass="IOParallaxHeader" customModule="IOStickyHeader_Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wEY-Vz-PUT">
+                        <rect key="frame" x="0.0" y="-150" width="320" height="500"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="500" id="Wcr-GV-FQp"/>
+                        </constraints>
+                    </mapView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="wEY-Vz-PUT" firstAttribute="centerY" secondItem="Vau-7a-MjQ" secondAttribute="centerY" id="4tk-EJ-bD1"/>
+                <constraint firstAttribute="trailing" secondItem="wEY-Vz-PUT" secondAttribute="trailing" id="efU-gy-uX4"/>
+                <constraint firstItem="wEY-Vz-PUT" firstAttribute="leading" secondItem="Vau-7a-MjQ" secondAttribute="leading" id="lys-db-btE"/>
+            </constraints>
+            <size key="customSize" width="320" height="200"/>
+            <connections>
+                <outlet property="mapView" destination="wEY-Vz-PUT" id="7Cx-1t-MFX"/>
+            </connections>
+            <point key="canvasLocation" x="365" y="325"/>
+        </collectionViewCell>
+    </objects>
+</document>

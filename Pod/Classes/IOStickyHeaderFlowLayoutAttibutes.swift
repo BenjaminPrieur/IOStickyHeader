@@ -3,7 +3,8 @@
 //  Smokio
 //
 //  Created by ben on 25/06/2015.
-//  Copyright © 2015 Smokio. All rights reserved.
+//  For the full copyright and license information, please view the LICENSE
+//  file that was distributed with this source code.
 //
 
 import Foundation
