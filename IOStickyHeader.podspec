@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "IOStickyHeader"
-  s.version          = "0.2.0"
+  s.version          = "0.2.1"
   s.summary          = "Parallax and Sticky header done right using UICollectionViewLayout"
   s.description      = <<-DESC
                        UICollectionView are flexible and you can use supplementary views to
@@ -26,11 +26,4 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
-  # s.resource_bundles = {
-  #  'IOStickyHeader' => ['Pod/Assets/*.png']
-  #}
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
