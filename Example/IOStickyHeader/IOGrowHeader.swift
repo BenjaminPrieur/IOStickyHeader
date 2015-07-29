@@ -22,15 +22,15 @@ class IOGrowHeader: UICollectionViewCell {
     }
     
     override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
-        guard let layoutAttributes:IOStickyHeaderFlowLayoutAttributes = layoutAttributes as? IOStickyHeaderFlowLayoutAttributes else { return }
-        
-        if layoutAttributes.progressiveness < 1 {
-            self.constraintImgSize.constant = 130
-            self.imgPhoto.updateConstraintsIfNeeded()
-        } else {
-            self.constraintImgSize.constant = 130 * layoutAttributes.progressiveness
-            self.imgPhoto.updateConstraintsIfNeeded()
-        }
+        if let layoutAttributes:IOStickyHeaderFlowLayoutAttributes = layoutAttributes as? IOStickyHeaderFlowLayoutAttributes {
+            if layoutAttributes.progressiveness < 1 {
+                self.constraintImgSize.constant = 130
+                self.imgPhoto.updateConstraintsIfNeeded()
+            } else {
+                self.constraintImgSize.constant = 130 * layoutAttributes.progressiveness
+                self.imgPhoto.updateConstraintsIfNeeded()
+            }
+        } else { return }
     }
 
 }

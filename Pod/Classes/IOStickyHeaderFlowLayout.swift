@@ -45,94 +45,100 @@ public class IOStickyHeaderFlowLayout: UICollectionViewFlowLayout {
         return attributes
     }
     
-    public override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+    public override func layoutAttributesForElementsInRect(rect: CGRect) -> [AnyObject]? {
         var adjustedRec = rect
         adjustedRec.origin.y -= (self.parallaxHeaderReferenceSize?.height)!
         
-        var allItems: [UICollectionViewLayoutAttributes] = super.layoutAttributesForElementsInRect(adjustedRec)!
-        
-        let headers: NSMutableDictionary = NSMutableDictionary()
-        let lastCells: NSMutableDictionary = NSMutableDictionary()
-        var visibleParallaxHeader: Bool = false
-        
-        for attributes in allItems {
-            var frame = attributes.frame
-            frame.origin.y += (self.parallaxHeaderReferenceSize?.height)!
-            attributes.frame = frame
+        if let layoutAttributesForElementsInRect = super.layoutAttributesForElementsInRect(adjustedRec)! as? [UICollectionViewLayoutAttributes] {
+            var allItems: [UICollectionViewLayoutAttributes] = layoutAttributesForElementsInRect
             
-            let indexPath = attributes.indexPath
-            if attributes.representedElementKind == UICollectionElementKindSectionHeader {
-                headers.setObject(attributes, forKey: indexPath.section)
-            } else {
-                let currentAttribute = lastCells.objectForKey(indexPath.section)
-                if currentAttribute == nil || indexPath.row > currentAttribute?.indexPath.row {
-                    lastCells.setObject(attributes, forKey: indexPath.section)
-                }
-                if indexPath.item == 0 && indexPath.section == 0 {
-                    visibleParallaxHeader = true
-                }
-            }
+            let headers: NSMutableDictionary = NSMutableDictionary()
+            let lastCells: NSMutableDictionary = NSMutableDictionary()
+            var visibleParallaxHeader: Bool = false
             
-            attributes.zIndex = 1
-        }
-        
-        if CGRectGetMinY(rect) <= 0 {
-            visibleParallaxHeader = true
-        }
-        
-        if self.parallaxHeaderAlwaysOnTop == true {
-            visibleParallaxHeader = true
-        }
-        
-        if visibleParallaxHeader && !CGSizeEqualToSize(CGSizeZero, self.parallaxHeaderReferenceSize!) {
-            let currentAttribute = IOStickyHeaderFlowLayoutAttributes(forSupplementaryViewOfKind: IOStickyHeaderParallaxHeader, withIndexPath: NSIndexPath(index: 0))
-            var frame = currentAttribute.frame
-            frame.size.width = (self.parallaxHeaderReferenceSize?.width)!
-            frame.size.height = (self.parallaxHeaderReferenceSize?.height)!
-            
-            let bounds = self.collectionView?.bounds
-            let maxY = CGRectGetMaxY(frame)
-            
-            var y = min(maxY - self.parallaxHeaderMinimumReferenceSize.height, (bounds?.origin.y)! + (self.collectionView?.contentInset.top)!)
-            let height = max(0, -y + maxY)
-            
-            
-            let maxHeight = self.parallaxHeaderReferenceSize!.height
-            let minHeight = self.parallaxHeaderMinimumReferenceSize.height
-            let progressiveness = (height - minHeight)/(maxHeight-minHeight)
-            currentAttribute.progressiveness = progressiveness
-            
-            currentAttribute.zIndex = 0
-            
-            if self.parallaxHeaderAlwaysOnTop && height <= self.parallaxHeaderMinimumReferenceSize.height {
-                let insertTop = self.collectionView?.contentInset.top
-                y = (self.collectionView?.contentOffset.y)! + insertTop!
-                currentAttribute.zIndex = 2000
-            }
-            
-            currentAttribute.frame = CGRectMake(frame.origin.x, y, frame.size.width, height)
-            allItems.append(currentAttribute)
-        }
-        
-        if !self.disableStickyHeaders {
-            for obj in lastCells.keyEnumerator() {
-                if let indexPath = obj.indexPath {
-                    let indexPAthKey = indexPath.section
-                    
-                    var header = headers[indexPAthKey]
-                    if header == nil {
-                        header = self.layoutAttributesForSupplementaryViewOfKind(UICollectionElementKindSectionHeader, atIndexPath: NSIndexPath(forItem: 0, inSection: indexPath.section))
-                        if let header:UICollectionViewLayoutAttributes = header as? UICollectionViewLayoutAttributes {
-                            allItems.append(header)
-                        }
+            for attributes in allItems {
+                var frame = attributes.frame
+                frame.origin.y += (self.parallaxHeaderReferenceSize?.height)!
+                attributes.frame = frame
+                
+                let indexPath = attributes.indexPath
+                if let elementKind = attributes.representedElementKind {
+                    if elementKind == UICollectionElementKindSectionHeader {
+                        headers.setObject(attributes, forKey: indexPath.section)
                     }
-                    
-                    self.updateHeaderAttributesForLastCellAttributes(header as! UICollectionViewLayoutAttributes, lastCellAttributes: lastCells[indexPAthKey] as! UICollectionViewLayoutAttributes)
+                } else {
+                    let currentAttribute = lastCells.objectForKey(indexPath.section)
+                    if currentAttribute == nil || indexPath.row > currentAttribute?.indexPath?.row {
+                        lastCells.setObject(attributes, forKey: indexPath.section)
+                    }
+                    if indexPath.item == 0 && indexPath.section == 0 {
+                        visibleParallaxHeader = true
+                    }
+                }
+                
+                attributes.zIndex = 1
+            }
+            
+            if CGRectGetMinY(rect) <= 0 {
+                visibleParallaxHeader = true
+            }
+            
+            if self.parallaxHeaderAlwaysOnTop == true {
+                visibleParallaxHeader = true
+            }
+            
+            if visibleParallaxHeader && !CGSizeEqualToSize(CGSizeZero, self.parallaxHeaderReferenceSize!) {
+                let currentAttribute = IOStickyHeaderFlowLayoutAttributes(forSupplementaryViewOfKind: IOStickyHeaderParallaxHeader, withIndexPath: NSIndexPath(index: 0))
+                var frame = currentAttribute.frame
+                frame.size.width = (self.parallaxHeaderReferenceSize?.width)!
+                frame.size.height = (self.parallaxHeaderReferenceSize?.height)!
+                
+                let bounds = self.collectionView?.bounds
+                let maxY = CGRectGetMaxY(frame)
+                
+                var y = min(maxY - self.parallaxHeaderMinimumReferenceSize.height, (bounds?.origin.y)! + (self.collectionView?.contentInset.top)!)
+                let height = max(0, -y + maxY)
+                
+                
+                let maxHeight = self.parallaxHeaderReferenceSize!.height
+                let minHeight = self.parallaxHeaderMinimumReferenceSize.height
+                let progressiveness = (height - minHeight)/(maxHeight-minHeight)
+                currentAttribute.progressiveness = progressiveness
+                
+                currentAttribute.zIndex = 0
+                
+                if self.parallaxHeaderAlwaysOnTop && height <= self.parallaxHeaderMinimumReferenceSize.height {
+                    let insertTop = self.collectionView?.contentInset.top
+                    y = (self.collectionView?.contentOffset.y)! + insertTop!
+                    currentAttribute.zIndex = 2000
+                }
+                
+                currentAttribute.frame = CGRectMake(frame.origin.x, y, frame.size.width, height)
+                allItems.append(currentAttribute)
+            }
+            
+            if !self.disableStickyHeaders {
+                for obj in lastCells.keyEnumerator() {
+                    if let indexPath = obj.indexPath {
+                        let indexPAthKey = indexPath.section
+                        
+                        var header = headers[indexPAthKey]
+                        if header == nil {
+                            header = self.layoutAttributesForSupplementaryViewOfKind(UICollectionElementKindSectionHeader, atIndexPath: NSIndexPath(forItem: 0, inSection: indexPath.section))
+                            if let header:UICollectionViewLayoutAttributes = header as? UICollectionViewLayoutAttributes {
+                                allItems.append(header)
+                            }
+                        }
+                        
+                        self.updateHeaderAttributesForLastCellAttributes(header as! UICollectionViewLayoutAttributes, lastCellAttributes: lastCells[indexPAthKey] as! UICollectionViewLayoutAttributes)
+                    }
                 }
             }
+            
+            return allItems
         }
         
-        return allItems
+        return []
     }
     
     public override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
