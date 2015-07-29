@@ -60,7 +60,7 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 use_frameworks!
-pod "IOStickyHeader"
+pod 'IOStickyHeader', :git => 'https://github.com/BenjaminPrieur/IOStickyHeader.git', :branch => 'Swift1.2'
 ```
 
 ## Author
