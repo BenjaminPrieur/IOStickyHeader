@@ -1,0 +1,14 @@
+PODS:
+  - IOStickyHeader (0.1.0)
+
+DEPENDENCIES:
+  - IOStickyHeader (from `../`)
+
+EXTERNAL SOURCES:
+  IOStickyHeader:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  IOStickyHeader: 98ef8a9c42dbb384b136262e1b22b7482a14deb3
+
+COCOAPODS: 0.37.2
