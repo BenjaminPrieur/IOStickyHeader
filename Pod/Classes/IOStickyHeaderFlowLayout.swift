@@ -49,13 +49,7 @@ public class IOStickyHeaderFlowLayout: UICollectionViewFlowLayout {
         var adjustedRec = rect
         adjustedRec.origin.y -= (self.parallaxHeaderReferenceSize?.height)!
         
-        let attributes = super.layoutAttributesForElementsInRect(adjustedRec)!
-        var allItems = [UICollectionViewLayoutAttributes]()
-        for itemAttributes in attributes {
-            let itemAttributesCopy = itemAttributes.copy() as! UICollectionViewLayoutAttributes
-            // manipulate itemAttributesCopy
-            allItems.append(itemAttributesCopy)
-        }
+        var allItems: [UICollectionViewLayoutAttributes] = super.layoutAttributesForElementsInRect(adjustedRec)!
         
         let headers: NSMutableDictionary = NSMutableDictionary()
         let lastCells: NSMutableDictionary = NSMutableDictionary()
