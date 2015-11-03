@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zS2-Eb-M21">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zS2-Eb-M21">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--Item-->
@@ -19,6 +19,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="y2i-bv-BUt">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.42352941179999998" green="0.51764705879999995" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zto-VZ-E0x" customClass="IOStickyHeaderFlowLayout" customModule="IOStickyHeader">
                                     <size key="itemSize" width="160" height="50"/>
@@ -36,19 +37,23 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAd-gG-IvO">
                                                     <rect key="frame" x="8" y="14" width="144" height="21"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="Duo-0e-DL8"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="xAd-gG-IvO" secondAttribute="trailing" constant="8" id="LFm-ZB-gm8"/>
                                             <constraint firstItem="xAd-gG-IvO" firstAttribute="centerX" secondItem="0eh-kb-OPv" secondAttribute="centerX" id="N9a-zg-gIm"/>
-                                            <constraint firstAttribute="bottom" secondItem="xAd-gG-IvO" secondAttribute="bottom" constant="15" id="Sh9-Ei-Dvw"/>
                                             <constraint firstItem="xAd-gG-IvO" firstAttribute="leading" secondItem="0eh-kb-OPv" secondAttribute="leading" constant="8" id="blX-Od-UTQ"/>
-                                            <constraint firstItem="xAd-gG-IvO" firstAttribute="top" secondItem="0eh-kb-OPv" secondAttribute="top" constant="14" id="eBi-6A-Sl8"/>
                                             <constraint firstItem="xAd-gG-IvO" firstAttribute="centerY" secondItem="0eh-kb-OPv" secondAttribute="centerY" id="vIx-cb-Mdi"/>
                                         </constraints>
                                         <connections>
@@ -58,6 +63,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="y2i-bv-BUt" secondAttribute="trailing" id="0fr-67-Vpo"/>
@@ -89,6 +95,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7fV-Mg-QWN">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.97254901960784312" green="0.95294117647058818" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3tC-8k-pLb" customClass="IOStickyHeaderFlowLayout" customModule="IOStickyHeader">
                                     <size key="itemSize" width="306" height="101"/>
@@ -106,6 +113,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nli-Mt-TvJ">
                                                     <rect key="frame" x="8" y="40" width="290" height="21"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="8Z9-bn-7Sh"/>
                                                     </constraints>
@@ -113,8 +121,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Nli-Mt-TvJ" secondAttribute="trailing" constant="8" id="IZh-eP-sNG"/>
                                             <constraint firstItem="Nli-Mt-TvJ" firstAttribute="centerX" secondItem="8Ff-z7-J1c" secondAttribute="centerX" id="UkP-d5-baz"/>
@@ -132,6 +142,7 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGa-I4-snB">
                                             <rect key="frame" x="8" y="14" width="584" height="21"/>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="tq4-Eg-afY"/>
                                             </constraints>
@@ -140,6 +151,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <animations/>
                                     <constraints>
                                         <constraint firstItem="JGa-I4-snB" firstAttribute="centerY" secondItem="Acf-HA-E2I" secondAttribute="centerY" id="Smw-yU-1yS"/>
                                         <constraint firstAttribute="trailing" secondItem="JGa-I4-snB" secondAttribute="trailing" constant="8" id="hya-Bp-A4c"/>
@@ -151,6 +163,7 @@
                                 </collectionReusableView>
                             </collectionView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7fV-Mg-QWN" firstAttribute="leading" secondItem="i20-98-eKf" secondAttribute="leading" id="Ah6-Fr-7oP"/>
@@ -176,6 +189,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="DTe-DQ-orN">
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>

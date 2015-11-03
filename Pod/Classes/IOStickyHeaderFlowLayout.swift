@@ -49,7 +49,13 @@ public class IOStickyHeaderFlowLayout: UICollectionViewFlowLayout {
         var adjustedRec = rect
         adjustedRec.origin.y -= (self.parallaxHeaderReferenceSize?.height)!
         
-        var allItems: [UICollectionViewLayoutAttributes] = super.layoutAttributesForElementsInRect(adjustedRec)!
+        let attributes = super.layoutAttributesForElementsInRect(adjustedRec)!
+        var allItems = [UICollectionViewLayoutAttributes]()
+        for itemAttributes in attributes {
+            let itemAttributesCopy = itemAttributes.copy() as! UICollectionViewLayoutAttributes
+            // manipulate itemAttributesCopy
+            allItems.append(itemAttributesCopy)
+        }
         
         let headers: NSMutableDictionary = NSMutableDictionary()
         let lastCells: NSMutableDictionary = NSMutableDictionary()
@@ -136,11 +142,14 @@ public class IOStickyHeaderFlowLayout: UICollectionViewFlowLayout {
     }
     
     public override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
-        let attributes = super.layoutAttributesForItemAtIndexPath(indexPath)
-        var frame = attributes?.frame
-        frame!.origin.y += (self.parallaxHeaderReferenceSize?.height)!
-        attributes?.frame = frame!
-        return attributes
+        if let attributes = super.layoutAttributesForItemAtIndexPath(indexPath)?.copy() as? UICollectionViewLayoutAttributes {
+            var frame = attributes.frame
+            frame.origin.y += (self.parallaxHeaderReferenceSize?.height)!
+            attributes.frame = frame
+            return attributes
+        } else {
+            return nil
+        }
     }
     
     public override func collectionViewContentSize() -> CGSize {
