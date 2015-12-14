@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E31E75754D1A43CC07004A /* Pods_IOStickyHeader_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBFECF5DCE9BB70332456CB /* Pods_IOStickyHeader_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		00E31E75754D1A43CC07004A /* Pods_IOStickyHeader_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBFECF5DCE9BB70332456CB /* Pods_IOStickyHeader_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
@@ -21,7 +21,7 @@
 		B5FDDAF31B41707C00FCE454 /* IOGrowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FDDAF21B41707C00FCE454 /* IOGrowVC.swift */; };
 		B5FDDAF61B4171B400FCE454 /* IOGrowHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FDDAF41B4171B400FCE454 /* IOGrowHeader.swift */; };
 		B5FDDAF71B4171B400FCE454 /* IOGrowHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5FDDAF51B4171B400FCE454 /* IOGrowHeader.xib */; };
-		FCFF892CF488B4B89B3A3017 /* Pods_IOStickyHeader_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A0EED7B81E5A6A5B7B92F2E /* Pods_IOStickyHeader_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		FCFF892CF488B4B89B3A3017 /* Pods_IOStickyHeader_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A0EED7B81E5A6A5B7B92F2E /* Pods_IOStickyHeader_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
