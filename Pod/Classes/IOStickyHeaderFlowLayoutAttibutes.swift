@@ -19,7 +19,7 @@ public class IOStickyHeaderFlowLayoutAttributes: UICollectionViewLayoutAttribute
   }
   
   public override func copyWithZone(zone: NSZone) -> AnyObject {
-    let copy = super.copyWithZone(zone) as! IOStickyHeaderFlowLayoutAttributes
+    let copy = copyWithZone(zone) as! IOStickyHeaderFlowLayoutAttributes
     copy.progressiveness = self.progressiveness
     return copy
   }
