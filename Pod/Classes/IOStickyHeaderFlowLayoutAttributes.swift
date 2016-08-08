@@ -1,5 +1,5 @@
 //
-//  IOStickyHeaderFlowLayoutAttibutes.swift
+//  IOStickyHeaderFlowLayoutAttributes.swift
 //  Smokio
 //
 //  Created by ben on 25/06/2015.
