@@ -1,4 +1,4 @@
-I migrated [CSStickyHeaderFlowLayout](https://github.com/jamztang/CSStickyHeaderFlowLayout) library (Obj-C) to swift2.1
+I migrated [CSStickyHeaderFlowLayout](https://github.com/jamztang/CSStickyHeaderFlowLayout) library (Obj-C) to swift3.0
 
 
 # IOStickyHeader
@@ -49,9 +49,9 @@ func collectionView(collectionView: UICollectionView, viewForSupplementaryElemen
 
 ## Requirements
 
-- Xcode 7
-- Swift 2.1
-- iOS 8 (I haven't really test on iOS 7 but it should work if you're using iOS 7 compatible Storyboard)
+- Xcode 8
+- Swift 3.0
+- iOS 9
 
 ## Installation
 
