@@ -22,11 +22,11 @@ open class IOStickyHeaderFlowLayout: UICollectionViewFlowLayout {
   open var parallaxHeaderMinimumReferenceSize: CGSize = CGSize.zero
   open var parallaxHeaderAlwaysOnTop: Bool = false
   open var disableStickyHeaders: Bool = false
-  
+
   open override func prepare() {
     super.prepare()
   }
-  
+
   open override func initialLayoutAttributesForAppearingSupplementaryElement(ofKind elementKind: String, at elementIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
     let attributes = super.initialLayoutAttributesForAppearingSupplementaryElement(ofKind: elementKind, at: elementIndexPath)
     var frame = attributes?.frame
@@ -135,7 +135,7 @@ open class IOStickyHeaderFlowLayout: UICollectionViewFlowLayout {
             }
           }
           
-          self.updateHeaderAttributesForLastCellAttributes(header as! UICollectionViewLayoutAttributes, lastCellAttributes: lastCells[indexPAthKey] as! UICollectionViewLayoutAttributes)
+          self.updateHeaderAttributesForLastCellAttributes(attributes: header as! UICollectionViewLayoutAttributes, lastCellAttributes: lastCells[indexPAthKey] as! UICollectionViewLayoutAttributes)
         }
       }
     }
@@ -170,7 +170,7 @@ open class IOStickyHeaderFlowLayout: UICollectionViewFlowLayout {
   
   // *********************************************************************
   // MARK: - Helper
-  open func updateHeaderAttributesForLastCellAttributes(_ attributes:UICollectionViewLayoutAttributes, lastCellAttributes: UICollectionViewLayoutAttributes) {
+  open func updateHeaderAttributesForLastCellAttributes(attributes: UICollectionViewLayoutAttributes, lastCellAttributes: UICollectionViewLayoutAttributes) {
     let currentBounds = self.collectionView?.bounds
     attributes.zIndex = 1024
     attributes.isHidden = false
