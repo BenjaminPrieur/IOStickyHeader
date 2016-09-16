@@ -1,12 +1,12 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'IOStickyHeader_Example', :exclusive => true do
+target 'IOStickyHeader_Example' do
   pod "IOStickyHeader", :path => "../"
 end
 
-target 'IOStickyHeader_Tests', :exclusive => true do
+target 'IOStickyHeader_Tests' do
   pod "IOStickyHeader", :path => "../"
 
-  
+
 end

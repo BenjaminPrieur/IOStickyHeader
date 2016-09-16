@@ -12,7 +12,7 @@ import IOStickyHeader
 class IOParallaxVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    let headerNib = UINib(nibName: "IOParallaxHeader", bundle: NSBundle.mainBundle())
+    let headerNib = UINib(nibName: "IOParallaxHeader", bundle: Bundle.main)
     var section: Array<String> = []
     
     override func viewDidLoad() {
@@ -54,9 +54,9 @@ class IOParallaxVC: UIViewController, UICollectionViewDataSource, UICollectionVi
         self.collectionView.delegate = self
         
         if let layout: IOStickyHeaderFlowLayout = self.collectionView.collectionViewLayout as? IOStickyHeaderFlowLayout {
-            layout.parallaxHeaderReferenceSize = CGSizeMake(UIScreen.mainScreen().bounds.size.width, 300)
-            layout.parallaxHeaderMinimumReferenceSize = CGSizeMake(UIScreen.mainScreen().bounds.size.width, 0)
-            layout.itemSize = CGSizeMake(UIScreen.mainScreen().bounds.size.width, layout.itemSize.height)
+            layout.parallaxHeaderReferenceSize = CGSize(width: UIScreen.main.bounds.size.width, height: 300)
+            layout.parallaxHeaderMinimumReferenceSize = CGSize(width: UIScreen.main.bounds.size.width, height: 0)
+            layout.itemSize = CGSize(width: UIScreen.main.bounds.size.width, height: layout.itemSize.height)
             layout.parallaxHeaderAlwaysOnTop = true
             layout.disableStickyHeaders = true
             self.collectionView.collectionViewLayout = layout
@@ -64,40 +64,40 @@ class IOParallaxVC: UIViewController, UICollectionViewDataSource, UICollectionVi
         
         self.collectionView.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, 0, 0)
         
-        self.collectionView.registerNib(self.headerNib, forSupplementaryViewOfKind: IOStickyHeaderParallaxHeader, withReuseIdentifier: "header")
+        self.collectionView.register(self.headerNib, forSupplementaryViewOfKind: IOStickyHeaderParallaxHeader, withReuseIdentifier: "header")
     }
 
     //MARK: UICollectionViewDataSource & UICollectionViewDelegate
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return self.section.count
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell: IOCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! IOCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: IOCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! IOCell
         
-        let obj = self.section[indexPath.section]
+        let obj = self.section[(indexPath as NSIndexPath).section]
         
         cell.lblTitle.text = obj
         
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(UIScreen.mainScreen().bounds.size.width, 50);
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.size.width, height: 50);
     }
     
-    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionElementKindSectionHeader:
-            let cell = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "sectionHeader", forIndexPath: indexPath) as! IOSectionHeader
+            let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "sectionHeader", for: indexPath) as! IOSectionHeader
             return cell
         case IOStickyHeaderParallaxHeader:
-            let cell = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "header", forIndexPath: indexPath) as! IOParallaxHeader
+            let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! IOParallaxHeader
             return cell
         default:
             assert(false, "Unexpected element kind")

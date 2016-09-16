@@ -21,7 +21,7 @@ class IOGrowHeader: UICollectionViewCell {
         self.btnBot.layer.cornerRadius = 5
     }
     
-    override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
+    override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
         guard let layoutAttributes:IOStickyHeaderFlowLayoutAttributes = layoutAttributes as? IOStickyHeaderFlowLayoutAttributes else { return }
         
         if layoutAttributes.progressiveness < 1 {
