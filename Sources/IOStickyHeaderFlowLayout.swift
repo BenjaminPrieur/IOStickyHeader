@@ -8,6 +8,7 @@
 //
 
 import Foundation
+#if os(iOS)
 import UIKit
 
 public let IOStickyHeaderParallaxHeader = "IOStickyHeaderParallexHeader"
@@ -191,3 +192,4 @@ open class IOStickyHeaderFlowLayout: UICollectionViewFlowLayout {
     attributes.frame = CGRect(x: origin.x, y: origin.y, width: attributes.frame.size.width, height: attributes.frame.size.width)
   }
 }
+#endif

@@ -8,6 +8,7 @@
 //
 
 import Foundation
+#if os(iOS)
 import UIKit
 
 open class IOStickyHeaderFlowLayoutAttributes: UICollectionViewLayoutAttributes {
@@ -24,3 +25,4 @@ open class IOStickyHeaderFlowLayoutAttributes: UICollectionViewLayoutAttributes 
     return copy
   }
 }
+#endif
