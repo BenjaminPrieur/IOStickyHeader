@@ -73,7 +73,7 @@ open class IOStickyHeaderFlowLayout: UICollectionViewFlowLayout {
         headers.setObject(attributes, forKey: (indexPath as NSIndexPath).section as NSCopying)
       } else {
         let currentAttribute = lastCells.object(forKey: (indexPath as IndexPath).section)
-        if currentAttribute == nil || (indexPath as NSIndexPath).row > (currentAttribute as AnyObject).indexPath.row {
+        if currentAttribute == nil || (indexPath as NSIndexPath).row > (currentAttribute as! UICollectionViewLayoutAttributes).indexPath.row {
           lastCells.setObject(attributes, forKey: (indexPath as NSIndexPath).section as NSCopying)
         }
         if (indexPath as NSIndexPath).item == 0 && (indexPath as NSIndexPath).section == 0 {
