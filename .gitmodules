@@ -1,3 +1,0 @@
-[submodule "Carthage/Checkouts/IOStickyHeader"]
-	path = Carthage/Checkouts/IOStickyHeader
-	url = https://github.com/BenjaminPrieur/IOStickyHeader.git
