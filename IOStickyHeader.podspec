@@ -22,9 +22,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/BenjaminPrieur/IOStickyHeader.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.pod_target_xcconfig = {
-    'SWIFT_VERSION' => '3.0'
-  }
+  s.swift_version = '4.2'
 
   s.platform     = :ios, '9.0'
   s.requires_arc = true
