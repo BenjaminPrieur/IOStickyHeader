@@ -50,8 +50,7 @@ func collectionView(collectionView: UICollectionView, viewForSupplementaryElemen
 
 ## Requirements
 
-- Xcode 8
-- Swift 3.0
+- Swift 4.2
 - iOS 9
 
 ## Installation

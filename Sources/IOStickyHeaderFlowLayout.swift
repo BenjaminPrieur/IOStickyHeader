@@ -69,7 +69,7 @@ open class IOStickyHeaderFlowLayout: UICollectionViewFlowLayout {
       attributes.frame = frame
       
       let indexPath = attributes.indexPath
-      if attributes.representedElementKind == UICollectionElementKindSectionHeader {
+        if attributes.representedElementKind == UICollectionView.elementKindSectionHeader {
         headers.setObject(attributes, forKey: (indexPath as NSIndexPath).section as NSCopying)
       } else {
         let currentAttribute = lastCells.object(forKey: (indexPath as IndexPath).section)
@@ -131,7 +131,7 @@ open class IOStickyHeaderFlowLayout: UICollectionViewFlowLayout {
           
           var header = headers[indexPAthKey]
           if header == nil {
-            header = self.layoutAttributesForSupplementaryView(ofKind: UICollectionElementKindSectionHeader, at: IndexPath(item: 0, section: (indexPath as NSIndexPath).section))
+            header = self.layoutAttributesForSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, at: IndexPath(item: 0, section: (indexPath as NSIndexPath).section))
             if let header:UICollectionViewLayoutAttributes = header as? UICollectionViewLayoutAttributes {
               allItems.append(header)
             }

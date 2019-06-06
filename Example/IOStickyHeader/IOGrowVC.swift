@@ -65,7 +65,7 @@ class IOGrowVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
             self.collectionView.collectionViewLayout = layout
         }
         
-        self.collectionView.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+        self.collectionView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
         self.collectionView.register(self.headerNib, forSupplementaryViewOfKind: IOStickyHeaderParallaxHeader, withReuseIdentifier: "header")
     }
